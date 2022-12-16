@@ -56,6 +56,7 @@ export const createTestRoomSession = async (
     vrt: CreateTestVRTOptions
     /** set of events to automatically subscribe before room.join() */
     initialEvents?: string[]
+    roomSessionOptions?: Record<string, any>
   }
 ) => {
   const vrt = await createTestVRTToken(options.vrt)
@@ -77,6 +78,7 @@ export const createTestRoomSession = async (
         debug: {
           logWsTraffic: true,
         },
+        ...options.roomSessionOptions,
       })
 
       options.initialEvents?.forEach((event) => {
@@ -92,6 +94,7 @@ export const createTestRoomSession = async (
       RELAY_HOST: process.env.RELAY_HOST,
       API_TOKEN: vrt,
       initialEvents: options.initialEvents,
+      roomSessionOptions: options.roomSessionOptions,
     }
   )
 }
