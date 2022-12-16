@@ -5,7 +5,7 @@ import { PlaywrightTestConfig, devices } from '@playwright/test'
 const config: PlaywrightTestConfig = {
   testDir: 'tests',
   globalSetup: require.resolve('./global-setup'),
-  // testMatch: ['roomSessionRemoveAfterSecondsElapsed.spec.ts'],
+  // testMatch: ['roomSessionReattach.spec.ts'],
   testIgnore: [
     'roomSessionPromoteParticipant.spec.ts',
     //   'roomSessionStreaming.spec.ts',
@@ -24,6 +24,8 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Chrome'],
         launchOptions: {
+          // devtools: true,
+          // headless: false,
           args: [
             '--use-fake-ui-for-media-stream',
             '--use-fake-device-for-media-stream',
