@@ -62,7 +62,7 @@ test.describe('RoomSession promote/demote methods', () => {
       timeout: 5000,
     })
 
-    // --------------- Joining from the 2st tab as audience and resolve on 'room.joined' ---------------
+    // --------------- Joining from the 2nd tab as audience and resolve on 'room.joined' ---------------
     const pageTwoRoomJoined: any = await pageTwo.evaluate(() => {
       return new Promise((resolve) => {
         // @ts-expect-error
