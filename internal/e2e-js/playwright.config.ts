@@ -7,7 +7,6 @@ const config: PlaywrightTestConfig = {
   globalSetup: require.resolve('./global-setup'),
   // testMatch: ['roomSessionReattach.spec.ts'],
   testIgnore: [
-    'roomSessionPromoteParticipant.spec.ts',
     //   'roomSessionStreaming.spec.ts',
   ],
   timeout: 120_000,
@@ -34,6 +33,5 @@ const config: PlaywrightTestConfig = {
       },
     },
   ],
-  testMatch: ['roomSessionReattachWrongProtocol.spec.ts'],
 }
 export default config
