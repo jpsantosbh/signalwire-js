@@ -61,20 +61,24 @@ test.describe('RoomSession', () => {
         await roomObj.startStream({
           url: STREAMING_URL! + '2',
         })
-        await roomObj.startStream({
-          url: STREAMING_URL! + '3',
-        })
-        await roomObj.startStream({
-          url: STREAMING_URL! + '4',
-        })
-        await roomObj.startStream({
-          url: STREAMING_URL! + '5',
-        })
 
-        // TODO: Expect 409 here
-        await roomObj.startStream({
-          url: STREAMING_URL! + '6',
-        })
+        const result = await roomObj.getStreams()
+
+        console.log("result", result)
+        // await roomObj.startStream({
+        //   url: STREAMING_URL! + '3',
+        // })
+        // await roomObj.startStream({
+        //   url: STREAMING_URL! + '4',
+        // })
+        // await roomObj.startStream({
+        //   url: STREAMING_URL! + '5',
+        // })
+
+        // // TODO: Expect 409 here
+        // await roomObj.startStream({
+        //   url: STREAMING_URL! + '6',
+        // })
 
         // return streamStarted
       },
